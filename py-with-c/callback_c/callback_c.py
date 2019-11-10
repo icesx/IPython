@@ -20,8 +20,6 @@ class Info(Structure):
         ("name",c_char_p),
         ("age",c_int)
     ]
-
-
 def ivoke_struct():
     info = Info();
     info.age = 1;

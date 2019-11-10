@@ -1,2 +1,2 @@
-MyPython some code for python 
+some code for python base 
 ============================
