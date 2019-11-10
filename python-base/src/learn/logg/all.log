@@ -1,0 +1,15 @@
+2018-06-16 10:54:26,836 - logger_sample.py:15 - root - xx
+2018-06-16 10:55:04,369 - logger_sample.py:16 - root - xx
+2018-06-16 10:55:04,370 - logger_sample.py:17 - mylogger - yy
+2018-06-16 10:55:04,370 - logger_sample.py:17 - mylogger - yy
+2018-06-16 11:06:06,650 - logger_main.py:16 - root - xx
+2018-06-16 11:06:06,650 - logger_main.py:17 - root - my name is icesx
+2018-06-16 11:06:06,650 - logger_main.py:18 - mylogger - yy
+2018-06-16 11:06:06,650 - logger_main.py:18 - mylogger - yy
+2018-06-16 11:06:20,279 - logger_main.py:16 - root - xx
+2018-06-16 11:06:20,282 - logger_main.py:18 - mylogger - yy
+2018-06-16 11:06:20,282 - logger_main.py:18 - mylogger - yy
+2018-06-16 11:06:26,185 - logger_main.py:16 - root - xx
+2018-06-16 11:06:26,186 - logger_main.py:17 - root - my name is icesx
+2018-06-16 11:06:26,186 - logger_main.py:18 - mylogger - yy
+2018-06-16 11:06:26,186 - logger_main.py:18 - mylogger - yy
