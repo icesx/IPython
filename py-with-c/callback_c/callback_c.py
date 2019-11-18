@@ -14,17 +14,24 @@ def ivoke_so():
 
 
 class Info(Structure):
-    #order must same with so
+    # order must same with so
     _fields_ = [
         ("id",c_long),
         ("name",c_char_p),
         ("age",c_int)
     ]
+
+
+def callback(age):
+    print("callback age:",age)
+
+
 def ivoke_struct():
-    info = Info();
-    info.age = 1;
-    info.name = b"xxx";
-    info.id = 1111;
-    so.ivoke_2.restype = Info;
-    age = so.ivoke_2(info)
+    info = Info()
+    info.age = 1
+    info.name = b"xxx"
+    info.id = 1111
+    so.ivoke_2.restype = Info
+    CALLBACK=CFUNCTYPE(None,c_int)
+    age = so.ivoke_2(info,CALLBACK(callback))
     print("ivoke from so age is",age.age)
