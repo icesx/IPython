@@ -13,7 +13,7 @@ python setup.py install --user
 ##deployer
 1. use by code 
 ```python
-from deployer.deploy import Deploy
+from py_utils.deployer.deploy import Deploy
 
 
 def main():

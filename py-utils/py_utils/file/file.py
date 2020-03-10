@@ -12,10 +12,11 @@ class FileOpreation():
         for file in _list:
             callback(file)
 
-    def recursive(self,callback,dir):
+    def recursive(self,filter,callback,dir):
         for file in os.listdir(dir):
             path = dir + "/" + file
             if os.path.isdir(path):
                 self.recursive(callback,path)
             else:
-                callback(path)
+                if filter(path):
+                    callback(path)

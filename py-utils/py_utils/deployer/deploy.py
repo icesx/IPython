@@ -25,7 +25,6 @@ class Deploy(object):
         return t
 
     def scp_file(self):
-
         sftp = paramiko.SFTPClient.from_transport(self.connect_server(self.user,self.host))
         _remote_zip_path = self.remote_dir + self.SEP + self.zip_name
         print ('to scp file ' + self.zip_path + ' to ' + _remote_zip_path)

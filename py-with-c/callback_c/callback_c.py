@@ -34,4 +34,10 @@ def ivoke_struct():
     so.ivoke_2.restype = Info
     CALLBACK=CFUNCTYPE(None,c_int)
     age = so.ivoke_2(info,CALLBACK(callback))
-    print("ivoke from so age is",age.age)
+    so.ivoke.restype = Info
+    print("ivoke_2 from so age is",age.age)
+    name="zhangsan"
+    info2=so.ivoke(c_int(1),bytes(name, encoding = "utf8"))
+    print("ivoke from so name is",str(info2.name,encoding = "utf8"))
+
+
