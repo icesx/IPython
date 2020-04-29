@@ -7,16 +7,16 @@ import os
 
 
 class FileOpreation():
-    def list(self,callback,dir):
+    def list(self,dir,callback):
         _list = os.listdir(dir)
         for file in _list:
             callback(file)
 
-    def recursive(self,filter,callback,dir):
+    def recursive(self,dir,filter=lambda path:True,callback=lambda path:None):
         for file in os.listdir(dir):
             path = dir + "/" + file
             if os.path.isdir(path):
-                self.recursive(callback,path)
+                self.recursive(path,filter,callback)
             else:
                 if filter(path):
                     callback(path)
