@@ -1,22 +1,24 @@
-from pip.req import parse_requirements
 from setuptools import setup
+import pathlib
 
-# parse_requirements() returns generator of pip.req.InstallRequirement objects
-install_reqs = parse_requirements("requirements.txt",session=False)
+import pkg_resources
+import setuptools
 
-# reqs is a list of requirement
-# e.g. ['django==1.5.1', 'mezzanine==1.4.6']
-reqs = [str(ir.req) for ir in install_reqs]
-
+with pathlib.Path('requirements.txt').open() as requirements_txt:
+    install_requires = [
+        str(requirement)
+        for requirement
+        in pkg_resources.parse_requirements(requirements_txt)
+    ]
 setup(
     name='py_utils',
     version='0.0.1',
     python_requires=">3.6.0",
-    packages=['py_utils',"py_utils/mapreduce","py_utils/deployer","py_utils/math","py_utils/file","py_utils/excel"],
+    packages=['py_utils',"py_utils/mapreduce","py_utils/math","py_utils/file","py_utils/excel"],
     url='',
     license='',
     author='i',
     author_email='',
     description='',
-    install_requires=reqs
+    install_requires=install_requires
 )
