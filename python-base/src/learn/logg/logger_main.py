@@ -5,12 +5,9 @@
 
 import logging.handlers
 
-from cn.i.xportal.logg import logger_creater
+from learn.logg.logger_creater import logger
 
 if __name__ == '__main__':
-    logger_creater.init_log()
-    logger_creater.init_log("mylogger")
-    logger = logging.getLogger()
     logger.info("xx")
-    logging.info("my name is %s","icesx")
-    logging.getLogger("mylogger").info("yy")
+    logger.info("my name is %s", "icesx")
+    logger.info("my name is 2 %s" % "icesx")
